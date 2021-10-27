@@ -1,0 +1,19 @@
+{
+  "name": "microbuds.io-websocket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Hattorius/microbuds.io-websocket.git",
+  "author": "Aaron Jonk <AJ@jonk.name>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/websocket": "^1.0.4",
+    "http": "^0.0.1-security",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4",
+    "websocket": "^1.0.34"
+  },
+  "scripts": {
+    "start": "ts-node-dev ./src/index.ts"
+  }
+}
