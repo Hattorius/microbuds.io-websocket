@@ -2,7 +2,9 @@
 import { config } from 'dotenv';
 config();
 import * as express from "express";
+import * as cors from "cors"; // to do: remove
 const app = express();
+app.use(cors()) // to do: remove
 import * as http from "http";
 const server = http.createServer(app);
 import { Server } from "socket.io";
