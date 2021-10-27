@@ -6,7 +6,11 @@ const app = express();
 import * as http from "http";
 const server = http.createServer(app);
 import { Server } from "socket.io";
-const io = new Server(server);
+const io = new Server(server, {
+	cors: {
+		origin: "*"
+	}
+});
 import * as mysql from 'mysql';
 
 var online = 0;
