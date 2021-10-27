@@ -6,7 +6,7 @@ const app = express();
 import * as http from "http";
 const server = http.createServer(app);
 import { Server } from "socket.io";
-const io = new Server(server, {
+const io = new Server(server, { // to do: remove
 	cors: {
 		origin: "*"
 	}
