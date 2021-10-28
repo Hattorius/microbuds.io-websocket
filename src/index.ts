@@ -77,16 +77,16 @@ server.listen(8080, () => {
         await delay(2500);
         connection.query("SELECT * FROM microbuddies WHERE token_id > ? ORDER BY token_id ASC", microbuddies.at(-1).token_id, (error, results, fields) => {
             if (error) throw error;
-            microbuddies.concat(results);
+            if (results.length > 0) io.emit('new microbuddy', results);
             for (var i = 0; i < results.length; i++) {
-                io.emit('new microbuddy', results[i]);
+            	microbuddies.push(results[i]);
             }
         });
         connection.query("SELECT * FROM traits WHERE id > ?", traits.at(-1).id, (error, results, fields) => {
             if (error) throw error;
-            traits.concat(traits);
+            if (results.length > 0) io.emit('new trait', results);
             for (var i = 0; i < results.length; i++) {
-                io.emit('new trait', results[i]);
+            	traits.push(results[i]);
             }
         })
     }
